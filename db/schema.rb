@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_01_022545) do
+ActiveRecord::Schema.define(version: 2018_05_01_181205) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2018_05_01_022545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
+  end
+
+  create_table "dogs_events", id: false, force: :cascade do |t|
+    t.integer "dog_id", null: false
+    t.integer "event_id", null: false
+  end
+
+  create_table "dogs_users", id: false, force: :cascade do |t|
+    t.integer "dog_id", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "events", force: :cascade do |t|
