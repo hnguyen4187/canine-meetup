@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_01_022545) do
+ActiveRecord::Schema.define(version: 2018_05_01_181205) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,9 +37,18 @@ ActiveRecord::Schema.define(version: 2018_05_01_022545) do
     t.integer "age"
     t.string "breed"
     t.boolean "fix"
+    t.integer "user_id"
+    t.integer "events_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
+    t.index ["events_id"], name: "index_dogs_on_events_id"
+    t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
+
+  create_table "dogs_events", id: false, force: :cascade do |t|
+    t.integer "dog_id", null: false
+    t.integer "event_id", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -48,8 +57,10 @@ ActiveRecord::Schema.define(version: 2018_05_01_022545) do
     t.string "location"
     t.date "date"
     t.time "time"
+    t.integer "dogs_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dogs_id"], name: "index_events_on_dogs_id"
   end
 
   create_table "users", force: :cascade do |t|

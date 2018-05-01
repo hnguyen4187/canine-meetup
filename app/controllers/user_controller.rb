@@ -6,6 +6,7 @@ class UserController < ApplicationController
   end
 
   def create
+    @user = User.create
   end
 
   def show
@@ -24,4 +25,5 @@ class UserController < ApplicationController
 
   def edit
   end
+
 end

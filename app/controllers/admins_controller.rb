@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   end
 
   def new
+    @admin = Admin.new
   end
 
   def create
