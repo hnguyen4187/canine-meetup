@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 2018_05_01_181205) do
     t.string "breed"
     t.boolean "fix"
     t.integer "user_id"
-    t.integer "events_id"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
-    t.index ["events_id"], name: "index_dogs_on_events_id"
+    t.index ["event_id"], name: "index_dogs_on_event_id"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
@@ -57,10 +57,12 @@ ActiveRecord::Schema.define(version: 2018_05_01_181205) do
     t.string "location"
     t.date "date"
     t.time "time"
-    t.integer "dogs_id"
+    t.integer "admin_id"
+    t.integer "dog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dogs_id"], name: "index_events_on_dogs_id"
+    t.index ["admin_id"], name: "index_events_on_admin_id"
+    t.index ["dog_id"], name: "index_events_on_dog_id"
   end
 
   create_table "users", force: :cascade do |t|
