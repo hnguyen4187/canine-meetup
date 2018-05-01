@@ -7,6 +7,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.date :date
       t.time :time
 
+      t.references :dogs
+
       t.timestamps
     end
   end
