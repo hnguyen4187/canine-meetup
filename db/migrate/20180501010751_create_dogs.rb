@@ -8,6 +8,9 @@ class CreateDogs < ActiveRecord::Migration[5.2]
       t.string :breed
       t.boolean :fix
 
+      
+      t.references :events
+
       t.timestamps
     end
   end

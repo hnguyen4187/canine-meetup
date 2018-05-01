@@ -9,8 +9,14 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
   end
 
   def show
+  end
+
+  private
+  def events_params
+    params.require(:events).permit(:title, :description, :location, :date, :time)
   end
 end
