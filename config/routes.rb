@@ -23,9 +23,14 @@ Rails.application.routes.draw do
   get 'dogs/new'
   get 'dogs/show'
   get 'dogs/form'
+
   devise_for :admins
   devise_for :users
+
+  authenticated :user do
+    root 'user#show', as: :authenticated_root
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts
-  root 'posts#index'
+  root 'user#new'
 end
