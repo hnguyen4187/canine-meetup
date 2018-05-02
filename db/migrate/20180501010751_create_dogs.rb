@@ -10,7 +10,7 @@ class CreateDogs < ActiveRecord::Migration[5.2]
 
 
       t.references :user
-      t.references :events
+      t.references :event
 
       t.timestamps
     end

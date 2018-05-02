@@ -4,10 +4,11 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :description
       t.string :location
-      t.date :date
-      t.time :time
+      t.string :date
+      t.string :time
 
-      t.references :dogs
+      t.references :dog
+      t.references :admin
 
       t.timestamps
     end
