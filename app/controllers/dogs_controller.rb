@@ -31,3 +31,4 @@ class DogsController < ApplicationController
     params.require(:dogs).permit(:fname, :lname, :gender, :age, :breed, :fix)
   end
 end
+end

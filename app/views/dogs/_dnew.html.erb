@@ -1,0 +1,29 @@
+<h1>Dogs#new</h1>
+<p>Find me in app/views/dogs/new.html.erb</p>
+
+<h1>Create a New Job</h1>
+  <%= simple_form_for(@dog) do |f| %>
+      <%= f.label :fname %>
+      <br>
+      <%= f.input_field :fname%>
+      <br>
+      <%= f.label :lname %>
+      <br>
+      <%= f.input_field :lname%>
+      <br>
+      <%= f.label :age %>
+      <br>
+      <%= f.input_field :age%>
+      <br>
+      <%= f.label :breed %>
+      <br>
+      <%= f.input_field :breed%>
+      <br>
+      <%= f.label :fixed %><br />
+      <%= f.label :fixed, "Yes", :value => "true"  %>
+      <%= f.radio_button :fixed, true %>
+      <%= f.label :fixed, "No", :value => "false" %>
+      <%= f.radio_button :fixed, false, :checked => true %>
+
+      <%= f.submit  'Submit'%>
+      <% end %>
