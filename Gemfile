@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'simple_form', '~> 4.0'
+
+gem 'bootstrap-navbar', '~> 3.0', '>= 3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
