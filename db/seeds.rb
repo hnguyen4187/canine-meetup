@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
 admin_list = [
   ["bee@gmail.com", "123456"],
   ["jay@gmail.com", "123456"],
@@ -34,7 +32,7 @@ dog_list = [
 ]
 
   dog_list.each do |fname, lname, gender, age, breed, fix, user_id|
-    Dog.create(fname: fname, lname: lname, gender: gender, age: age, breed: breed, user_id: user_id)
+    Dog.create(fname: fname, lname: lname, gender: gender, age: age, breed: breed, fix: fix, user_id: user_id)
   end
 
 event_list = [
