@@ -55,10 +55,17 @@ ActiveRecord::Schema.define(version: 2018_05_01_181205) do
     t.string "title"
     t.string "description"
     t.string "location"
+<<<<<<< HEAD
     t.date "date"
     t.time "time"
     t.integer "admin_id"
     t.integer "dog_id"
+=======
+    t.string "date"
+    t.string "time"
+    t.integer "dog_id"
+    t.integer "admin_id"
+>>>>>>> d46bdec72ecc645c25a668c65e832de27a0cbde0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_id"], name: "index_events_on_admin_id"

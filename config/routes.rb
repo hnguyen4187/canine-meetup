@@ -1,8 +1,38 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :admins
   resources :user
   resources :events
   resources :dogs
+=======
+  # get 'admins/index'
+  # get 'admins/new'
+  # get 'admins/create'
+  # get 'admins/show'
+  # get 'admins/update'
+  # get 'admins/destroy'
+  # get 'admins/edit'
+  # get 'user/index'
+  # get 'user/new'
+  # get 'user/create'
+  # get 'user/show'
+  # get 'user/update'
+  # get 'user/destroy'
+  # get 'user/edit'
+  # get 'events/index'
+  # get 'events/edit'
+  # get 'events/form'
+  # get 'events/new'
+  # get 'events/show'
+  # get 'dogs/index'
+  # get 'dogs/edit'
+  # get 'dogs/new'
+  # get 'dogs/show'
+  # get 'dogs/form'
+
+  resources :dogs
+  resources :events 
+>>>>>>> d46bdec72ecc645c25a668c65e832de27a0cbde0
 
   devise_for :admins
   devise_for :users

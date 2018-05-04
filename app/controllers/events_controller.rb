@@ -1,26 +1,26 @@
 class EventsController < ApplicationController
+
   def index
     @events = Event.all
   end
 
-  def new
-    @event = Event.new
-  end
-
-  def create
-    @event = Event.new(events_params)
-    @event.admin_id = current_admin.id
-    if @event.save
-      redirect_to 'events#show'
-    else
-      puts @event.errors.full_messages
-      redirect_to "new"
-    end
 
   def form
   end
 
+  def create
+    @Event = Event.new(dog_params)
+    get_event_admin_id
+  end
+
   def show
+    @event = Event.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def form
   end
 
   private
