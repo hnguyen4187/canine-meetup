@@ -7,8 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+    <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtZrarPnzDsfagH-LFcFF2xLQ8FgdHrQ8&callback=initMap">
+   </script>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -19,6 +20,5 @@
         </div>
     </footer>
     <%= yield %>
-
   </body>
 </html>
