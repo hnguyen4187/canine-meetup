@@ -1,18 +1,26 @@
 class EventsController < ApplicationController
+
   def index
-  end
-
-  def edit
-  end
-
-  def form
+    @events = Event.all
   end
 
   def new
     @event = Event.new
   end
 
+  def create
+    @Event = Event.new(dog_params)
+    get_event_admin_id
+  end
+
   def show
+    @event = Event.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def form
   end
 
   private
