@@ -24,16 +24,18 @@ Rails.application.routes.draw do
   # get 'dogs/show'
   # get 'dogs/form'
 
-  resources :dogs
-  resources :events 
+  resources :dogs, :only => [:show, :edit, :update, :destroy]
+  resources :events
+
 
   devise_for :admins
   devise_for :users
+  resources :users, :only => [:show, :edit, :update]
 
-  authenticated :user do
-    root 'user#show', as: :authenticated_root
-  end
+  # authenticated :user do
+  #   root 'user#show', as: :authenticated_root
+  # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts
-  root 'user#new'
+  root 'users#show'
 end

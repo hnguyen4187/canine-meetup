@@ -6,11 +6,10 @@ class CreateDogs < ActiveRecord::Migration[5.2]
       t.string :gender
       t.integer :age
       t.string :breed
-      t.boolean :fix
+      t.string :fix
 
 
       t.references :user
-      t.references :event
 
       t.timestamps
     end
