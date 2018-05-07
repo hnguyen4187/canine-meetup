@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # get 'dogs/show'
   # get 'dogs/form'
 
-  resources :dogs, :only => [:show, :edit, :update, :destroy, :index]
+  resources :dogs
   resources :events
 
 
