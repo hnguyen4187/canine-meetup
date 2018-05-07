@@ -1,0 +1,14 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<p>Your Profile: </p>
+<p>First name: <%= link_to @user.fname %></p>
+<p>Last name: <%= link_to @user.lname %></p>
+<p>Description: <%= link_to @user.description %></p>
+ <% if @user.avatar.url %>
+<p>Image: <%= image_tag @user.avatar.url %></p>
+<%end%>
+
+<% @user_dogs.each do |dog| %>
+<p>View your dogs page: <%=link_to 'Dog', dog_path(dog) %></p>
+<%end%>
