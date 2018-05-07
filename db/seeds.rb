@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}.jpg"))
+end
+
 admin_list = [
   ["bee@gmail.com", "123456"],
   ["jay@gmail.com", "123456"],
@@ -16,23 +20,27 @@ admin_list.each do |email, password|
 end
 
 user_list = [
-  ["bee2@gmail.com", "123456"],
-  ["jay2@gmail.com", "123456"],
-  ["kobi2@gmail.com", "123456"]
+  ["bee2@gmail.com", "123456","123456", "Joel", "Embiid", "I play basketball for the 76ers", "joel"],
+  ["jay2@gmail.com", "123456", "123456", "Carson", "Wentz", "QB for the Eagles", "carson"],
+  ["kobi2@gmail.com", "123456", "123456", "Kevin", "Hart", "I make jokes for a living", "hart"]
 ]
 
-user_list.each do |email, password|
-  User.create(email: email, password: password)
+user_list.each do |email, password, password_confirmation, fname, lname, description, avatar|
+  people = User.create(email: email, password: password, password_confirmation: password_confirmation, fname: fname, lname: lname, description: description)
+  people.avatar = seed_image(avatar)
+  people.save
 end
 
 dog_list = [
-  ["Buddy", "JavaScript", "male", 2, "labrador", true, 1],
-  ["Bella", "CSS", "female", 1, "german shepherd", true, 2],
-  ["Ginger", "HTML", "female", 3, "rottweiler", true, 3]
+  ["The Process", "Embiid", "Female", 3, "Pitbull", "yes", 1, "dog_2"],
+  ["Goals", "Wentz", "Male", 2, "German Shepherd", "yes", 2, "dog_1"],
+  ["Little", "Hart", "Male", 1, "French Bulldog", "yes", 3, "dog_3"]
 ]
 
-  dog_list.each do |fname, lname, gender, age, breed, fix, user_id|
-    Dog.create(fname: fname, lname: lname, gender: gender, age: age, breed: breed, fix: fix, user_id: user_id)
+  dog_list.each do |fname, lname, gender, age, breed, fix, user_id, avatar|
+  puppy =  Dog.new(fname: fname, lname: lname, gender: gender, age: age, breed: breed, fix: fix, user_id: user_id)
+  puppy.avatar = seed_image(avatar)
+  puppy.save
   end
 
 event_list = [

@@ -4,8 +4,8 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-
-  def form
+  def new
+    @event = Event.new
   end
 
   def create
