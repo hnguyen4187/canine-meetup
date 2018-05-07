@@ -2,13 +2,18 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 <p>Your Profile: </p>
-<p>First name: <%= link_to @user.fname %></p>
-<p>Last name: <%= link_to @user.lname %></p>
-<p>Description: <%= link_to @user.description %></p>
+<p>First name: <%= @user.fname %></p>
+<p>Last name: <%= @user.lname %></p>
+<p>Description: <%= @user.description %></p>
  <% if @user.avatar.url %>
+
 <p>Image: <%= image_tag @user.avatar.url %></p>
 <%end%>
 
 <% @user_dogs.each do |dog| %>
 <p>View your dogs page: <%=link_to 'Dog', dog_path(dog) %></p>
+
+<% end %>
+<% if @user.id == current_user.id %>
+<%= link_to 'Delete', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>
 <%end%>
