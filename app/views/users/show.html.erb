@@ -11,9 +11,9 @@
 <%end%>
 
 <% @user_dogs.each do |dog| %>
-<p>View your dogs page: <%=link_to 'Dog', dog_path(dog) %></p>
+<p>View your dogs page: <%=link_to 'Click Here', dog_path(dog) %></p>
 
 <% end %>
 <% if @user.id == current_user.id %>
-<%= link_to 'Delete', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>
+<%= link_to 'Delete Profile', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>
 <%end%>
