@@ -6,7 +6,6 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :date
       t.string :time
-
       t.references :dog
       t.references :admin
 

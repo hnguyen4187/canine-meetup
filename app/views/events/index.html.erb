@@ -1,6 +1,19 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
 
+
+<b>Google map Api</b>
+
+
+
+<div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input id="submit" type="button" value="Geocode">
+    </div>
+
+<div id="map">
+</div>
+
 <% @events.each do |event| %>
 <p>Title: <%= link_to event.title, event_path(event) %></p>
 <p>Description: <%= event.description %></p>
