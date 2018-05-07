@@ -18,6 +18,7 @@
 
 function initMap() {
 
+	// List of the first events
 	var penn = {
 		info: '<strong>Penn Landing Dog Park</strong><br>\
 					 1 N Delaware Ave <br>Philadelphia, PA 19106<br>\
@@ -47,15 +48,22 @@ function initMap() {
       [river.info, river.lat, river.long, 1],
       [square.info, square.lat, square.long, 2],
     ];
-
+// renders the map on the page
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 11,
 		center: new google.maps.LatLng(39.958224, -75.173135),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 
-	var infowindow = new google.maps.InfoWindow({});
+	var geocoder = new google.maps.Geocoder();
 
+	document.getElementById('submit').addEventListener('click', function() {
+		geocodeAddress(geocoder, map);
+	});
+
+
+	var infowindow = new google.maps.InfoWindow({});
+ // Sets markers on locations
 	var marker, i;
 
 	for (i = 0; i < locations.length; i++) {
@@ -71,4 +79,21 @@ function initMap() {
 			}
 		})(marker, i));
 	}
+
+
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }
