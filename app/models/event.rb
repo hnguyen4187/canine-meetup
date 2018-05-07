@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
   belongs_to :admin
-  has_and_belongs_to_many :dogs
+  has_many :dog_events, dependent: :destroy
+  has_many :dogs, :through => :dog_events
 end
