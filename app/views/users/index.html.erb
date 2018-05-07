@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+<p>First Name: <%= link_to user.fname, user_path(user) %></p>
+<p>Last Name: <%= user.lname %></p>
+<p>Description: <%= user.description %></p>
+<% if user.avatar.url %>
+<p>Image: <%= image_tag user.avatar.url %></p>
+<% end %>
+<% end %>
