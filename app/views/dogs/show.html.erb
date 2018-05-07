@@ -11,5 +11,9 @@
  <% if @dog.avatar.url %>
 <p>Image: <%= image_tag @dog.avatar.url %></p>
 
+<% if current_user.id == @dog.user_id %>
+<%= link_to "Edit Dog Profile", edit_dog_path(@dog) %>
+<% end %>
+
 <%= link_to "Delete Dog", dog_path(@dog), method: :delete %>
-<%end%>
+<% end %>
