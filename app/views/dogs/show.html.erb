@@ -11,6 +11,12 @@
  <% if @dog.avatar.url %>
 <p>Image: <%= image_tag @dog.avatar.url %></p>
 
+
+<%= form_with scope: DogEvent.new, url: dog_events_path, method: :post do |f| %>
+<%= select("dog_event", "event_id", events_array) %>
+<%= hidden_field_tag 'dog_event[dog_id]', @dog.id %>
+<%= f.submit "Add dog to Event" %>
+<% end %>
 <% if current_user.id == @dog.user_id %>
 <%= link_to "Edit Dog Profile", edit_dog_path(@dog) %>
 <% end %>

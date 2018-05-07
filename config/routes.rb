@@ -31,10 +31,9 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :users, :only => [:show, :edit, :update, :destroy]
 
-  resources :users, :only => [:show, :edit, :update, :index]
-
+  resources :users, :only => [:show, :edit, :update, :index, :destroy]
+  resources :dog_events, :only => [:create, :destroy]
 
   # authenticated :user do
   #   root 'user#show', as: :authenticated_root
