@@ -1,27 +1,57 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Hello, Canine Lovers!</h1>
+      <p>Welcome to Philly Dog Meetups! We specialize in oganizing meetups for dogs of all breeds and sizes. We hold weekly gatherings at parks all around Philadelphia so dogs and people can have a mutual place to mingle.</p>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Dogs</h2>
+        <p>Upload a picture of your dog and show him/her off to the world! Add details such as first name, last name, breed, age, gender, and a description of your bestfriend! </p>
 
-<%= render "devise/shared/links" %>
+      </div>
+      <div class="col-md-4">
+        <h2>Pet Owners</h2>
+        <p>This is your personal profile page. Add whatever you like such as an image and a short description of yourself so others can see who you are! </p>
+
+     </div>
+      <div class="col-md-4">
+        <h2>Events</h2>
+        <p>View events that are happening weekly around the Philadelphia area. These events are for free for all dogs and owners. Come let your dog mingle with other dogs, while you socialize with other dog lovers.</p>
+
+      </div>
+    </div>
+</div>
+    <hr>
+  </div>
+
+<div class = "container">
+  <h2>Log in</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
