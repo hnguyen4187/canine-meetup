@@ -21,24 +21,21 @@ function initMap() {
 	// List of the first events
 	var penn = {
 		info: '<strong>Penn Landing Dog Park</strong><br>\
-					 1 N Delaware Ave <br>Philadelphia, PA 19106<br>\
-					<a href="https://goo.gl/maps/o91wjENECkk">Get Directions</a>',
+					 1 N Delaware Ave <br>Philadelphia, PA 19106<br>',
 		lat: 39.949637,
 		long: -75.139647
 	};
 
 	var river = {
 		info: '<strong>Schuylkill River Dog Park</strong><br>\
-					S 25th St & Spruce St <br> Philadelphia, PA 19103<br>\
-					<a href="https://goo.gl/maps/3MFbrfFyQnt">Get Directions</a>',
+					S 25th St & Spruce St <br> Philadelphia, PA 19103<br>',
 		lat: 39.949027,
 		long: -75.181142
 	};
 
 	var square = {
 		info: '<strong>Columbus Square Dog Park</strong><br>\
-					1200 Wharton St<br> Philadelphia, PA 19147<br>\
-					<a href="https://goo.gl/maps/5A4mKHNsW4K2">Get Directions</a>',
+					1200 Wharton St<br> Philadelphia, PA 19147<br>',
 		lat: 39.933155,
 		long: -75.164776
 	};

@@ -44,11 +44,11 @@ dog_list = [
   end
 
 event_list = [
-  ["First Dog Meetup", "Meeting up for the first time ever. Let the dogs mingle with eachother", "Love Park", "May 15 2018", "5:00 PM", 1, 1],
+  ["First Dog Meetup", "Meeting up for the first time ever. Let the dogs mingle with eachother", "Penn Landing Dog Park", "May 15 2018", "5:00 PM", 1, 1],
 
-  ["Second Meetup for Dogs and Owners", "Let the dogs have fun while you meet others!", "Penn's Landing Dog Park","May 19 2018", "1:00 PM", 2 , 2],
+  ["Second Meetup for Dogs and Owners", "Let the dogs have fun while you meet others!", "Schuylkill River Dog Park","May 19 2018", "1:00 PM", 2 , 2],
 
-  ["Third Get Together for Dogs This Year!", "Calling all dogs! Come get your sniff on!", "FDR Park", "May 30 2018", "6:00 PM", 3, 3]
+  ["Third Get Together for Dogs This Year!", "Calling all dogs! Come get your sniff on!", "Columbus Square Dog Park", "May 30 2018", "6:00 PM", 3, 3]
 ]
 
   event_list.each do |title, description,location, date, time, dog_id, admin_id|
