@@ -1,10 +1,52 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtZrarPnzDsfagH-LFcFF2xLQ8FgdHrQ8&callback=initMap">
+</script>
 
 
 <p>Your Event: </p>
-<p>Title: <%= link_to @event.title %></p>
-<p>Description: <%= link_to @event.description %></p>
+<p>Title: <%= @event.title %></p>
+<p>Description: <%= @event.description %></p>
 <p>Location: <%= link_to @event.location %></p>
-<p>Date: <%= link_to @event.date %></p>
-<p>Time: <%= link_to @event.time %></p>
+<p>Date: <%= @event.date %></p>
+<p>Time: <%= @event.time %></p>
+
+<div id="floating-panel">
+      <input id="address" type="textbox" placeholder="Philadelphia, PA">
+      <input id="submit" type="button" value="Geocode">
+    </div>
+
+<div id="map">
+</div>
+
+<script >
+function initMap() {
+  var myLatLng = {lat: 39.958224,lng: -75.173135};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng
+        });
+        var geocoder = new google.maps.Geocoder();
+
+      	document.getElementById('submit').addEventListener('click', function() {
+      		geocodeAddress(geocoder, map);
+      	});
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+</script>
