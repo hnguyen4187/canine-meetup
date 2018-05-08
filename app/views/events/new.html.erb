@@ -9,7 +9,7 @@
   <%= f.text_field :description %>
   <br>
   <%= f.label :location, "Location: " %>
-  <%= f.select :location, dog_park %>
+  <%= f.text_field :location %>
   <br>
   <%= f.label :date, "Date: " %>
   <%= f.text_field :date %>
@@ -20,6 +20,8 @@
   <%= f.label :avatar %><br />
   <%= f.file_field :avatar %>
   <br>
+
+
   <%= f.submit %>
 
 <% end %>
