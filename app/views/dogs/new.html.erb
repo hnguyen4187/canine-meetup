@@ -1,6 +1,4 @@
-<h1>Dogs#new</h1>
-<p>Find me in app/views/dogs/new.html.erb</p>
-
+<div class = "container" >
   <%= form_for @dog do |f| %>
     <%= f.label :fname, "First name: " %>
     <%= f.text_field :fname %>
@@ -24,5 +22,5 @@
     <%= f.file_field :avatar %>
     <br>
     <%= f.submit %>
-
   <% end %>
+</div>

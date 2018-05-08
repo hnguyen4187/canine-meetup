@@ -1,26 +1,25 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<div class = "container" >
+  <p>Your Dog: </p>
+  <p>First name: <%= link_to @dog.fname %></p>
+  <p>Last name: <%= link_to @dog.lname %></p>
+  <p>Gender: <%= link_to @dog.gender %></p>
+  <p>Age: <%= link_to @dog.age %> years old</p>
+  <p>Breed: <%= link_to @dog.breed %></p>
+  <p>Fixed: <%= link_to @dog.fix %></p>
+   <% if @dog.avatar.url %>
+  <%= image_tag @dog.avatar.url %>
 
-<p>Your Dog: </p>
-<p>First name: <%= link_to @dog.fname %></p>
-<p>Last name: <%= link_to @dog.lname %></p>
-<p>Gender: <%= link_to @dog.gender %></p>
-<p>Age: <%= link_to @dog.age %> years old</p>
-<p>Breed: <%= link_to @dog.breed %></p>
-<p>Fixed: <%= link_to @dog.fix %></p>
- <% if @dog.avatar.url %>
-<p>Image: <%= image_tag @dog.avatar.url %></p>
-
-<% if current_user.id == @dog.user_id %>
-<%= form_with scope: DogEvent.new, url: dog_events_path, method: :post do |f| %>
-<%= select("dog_event", "event_id", events_array) %>
-<%= hidden_field_tag 'dog_event[dog_id]', @dog.id %>
-<%= f.submit "Add dog to Event" %>
-<% end %>
-<% if current_user.id == @dog.user_id %>
-<%= link_to "Edit Dog Profile", edit_dog_path(@dog) %>
-<% end %>
-<br>
-<%= link_to "Delete Dog", dog_path(@dog), method: :delete %>
-<% end %>
-<% end %>
+  <% if current_user.id == @dog.user_id %>
+  <%= form_with scope: DogEvent.new, url: dog_events_path, method: :post do |f| %>
+  <%= select("dog_event", "event_id", events_array) %>
+  <%= hidden_field_tag 'dog_event[dog_id]', @dog.id %>
+  <%= f.submit "Add dog to Event" %>
+  <% end %>
+  <% if current_user.id == @dog.user_id %>
+  <%= link_to "Edit Dog Profile", edit_dog_path(@dog) %>
+  <% end %>
+  <br>
+  <%= link_to "Delete Dog", dog_path(@dog), method: :delete %>
+  <% end %>
+  <% end %>
+</div>
