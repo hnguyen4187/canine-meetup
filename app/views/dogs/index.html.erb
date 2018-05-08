@@ -1,17 +1,14 @@
-<h1>Dogs#index</h1>
-<p>Find me in app/views/dogs/index.html.erb</p>
-
-
-
-<% @dogs.each do |dog| %>
-<p>First name: <%= link_to dog.fname, dog_path(dog) %></p>
-<p>Last name: <%= dog.lname %></p>
-<p>Gender: <%=  dog.gender %></p>
-<p>Age: <%=  dog.age %> years old</p>
-<p>Breed: <%= dog.breed %></p>
-<p>Fixed: <%= dog.fix %></p>
-<p>Belongs to: <%= link_to dog.user.fname%></p>
- <% if dog.avatar.url %>
-<p>Image: <%= image_tag dog.avatar.url %></p>
-<%end%>
-<%end%>
+<div class = "container" >
+  <% @dogs.each do |dog| %>
+  <p>First name: <%= link_to dog.fname, dog_path(dog) %></p>
+  <p>Last name: <%= dog.lname %></p>
+  <p>Gender: <%=  dog.gender %></p>
+  <p>Age: <%=  dog.age %> years old</p>
+  <p>Breed: <%= dog.breed %></p>
+  <p>Fixed: <%= dog.fix %></p>
+  <p>Belongs to: <%= link_to dog.user.fname%></p>
+   <% if dog.avatar.url %>
+  <%= image_tag dog.avatar.url %>
+  <%end%>
+  <%end%>
+</div>

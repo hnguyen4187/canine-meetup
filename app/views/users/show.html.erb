@@ -1,19 +1,17 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class = "container" >
+  <p>Your Profile: </p>
+  <p>First name: <%= @user.fname %></p>
+  <p>Last name: <%= @user.lname %></p>
+  <p>Description: <%= @user.description %></p>
+   <% if @user.avatar.url %>
+  <%= image_tag @user.avatar.url %>
+  <%end%>
 
-<p>Your Profile: </p>
-<p>First name: <%= @user.fname %></p>
-<p>Last name: <%= @user.lname %></p>
-<p>Description: <%= @user.description %></p>
- <% if @user.avatar.url %>
-
-<p>Image: <%= image_tag @user.avatar.url %></p>
-<%end%>
-
-<%=link_to 'Add Dog', new_dog_path(@dog) %>
-<% @user_dogs.each do |dog| %>
-<p>View your dogs page: <%=link_to 'Click Here', dog_path(dog) %></p>
-<% end %>
-<% if @user.id == current_user.id %>
-<%= link_to 'Delete Profile', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>
-<%end%>
+  <p><%=link_to 'Add Dog', new_dog_path(@dog) %></p>
+  <% @user_dogs.each do |dog| %>
+  <p>View your dogs page: <%=link_to 'Click Here', dog_path(dog) %></p>
+  <% end %>
+  <% if @user.id == current_user.id %>
+  <%= link_to 'Delete Profile', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>
+  <%end%>
+</div>
