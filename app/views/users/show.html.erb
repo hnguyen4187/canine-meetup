@@ -10,9 +10,9 @@
 <p>Image: <%= image_tag @user.avatar.url %></p>
 <%end%>
 
+<%=link_to 'Add Dog', new_dog_path(@dog) %>
 <% @user_dogs.each do |dog| %>
 <p>View your dogs page: <%=link_to 'Click Here', dog_path(dog) %></p>
-
 <% end %>
 <% if @user.id == current_user.id %>
 <%= link_to 'Delete Profile', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>

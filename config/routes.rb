@@ -24,17 +24,16 @@ Rails.application.routes.draw do
   # get 'dogs/show'
   # get 'dogs/form'
 
-  resources :dogs, :only => [:show, :edit, :update, :destroy, :index]
+  resources :dogs
   resources :events
 
 
   devise_for :admins
   devise_for :users
 
-  resources :users, :only => [:show, :edit, :update, :destroy]
 
-  resources :users, :only => [:show, :edit, :update, :index]
-
+  resources :users, :only => [:show, :edit, :update, :index, :destroy]
+  resources :dog_events, :only => [:create, :destroy]
 
   # authenticated :user do
   #   root 'user#show', as: :authenticated_root

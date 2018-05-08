@@ -6,11 +6,19 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtZrarPnzDsfagH-LFcFF2xLQ
 
 
 <p>Your Event: </p>
-<p>Title: <%= @event.title %></p>
-<p>Description: <%= @event.description %></p>
-<p>Location: <%= link_to @event.location %></p>
-<p>Date: <%= @event.date %></p>
-<p>Time: <%= @event.time %></p>
+
+<p>Title: <%=  @event.title %></p>
+<p>Description: <%=  @event.description %></p>
+<p>Location: <%=  @event.location %></p>
+<p>Date: <%=  @event.date %></p>
+<p>Time: <%=  @event.time %></p>
+
+<div class="RSVP">
+Dogs RSVP:
+<% @event.dogs.each do |dog| %>
+  <%= link_to "#{dog.fname} #{dog.lname}", dog_path(dog) %>
+<% end %>
+</div>
 
 <div id="floating-panel">
       <input id="address" type="textbox" placeholder="Philadelphia, PA">
