@@ -20,11 +20,32 @@ body{
 }
 
 h1{
-  font-style: italic;
-  font-weight: bold;
+  font-family: 'Shrikhand', cursive;
+  color: white;
 }
 
-nav{
+// nav a{
+// color: white;
+// justify-content: space-between;
+//   text-align: center;
+//   font-style: italic;
+//   font-weight: bold;
+//   margin-top: 0;
+//   padding-top: 1em;
+// text-decoration: none;
+// }
+//
+// nav{
+//   background-color: grey;
+//
+// }
+p{
+  color: lightsalmon;
+  font-weight: bold;
+
+}
+
+footer{
   color: white;
-  background-color: darkgrey;
+  text-align: center;
 }
