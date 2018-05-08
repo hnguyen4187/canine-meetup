@@ -14,38 +14,10 @@
  *= require_self
  */
 
-body{
-  background-color: #487dd0d6;
-
-}
-
-h1{
-  font-family: 'Shrikhand', cursive;
-  color: white;
-}
-
-// nav a{
-// color: white;
-// justify-content: space-between;
-//   text-align: center;
-//   font-style: italic;
-//   font-weight: bold;
-//   margin-top: 0;
-//   padding-top: 1em;
-// text-decoration: none;
-// }
-//
-// nav{
-//   background-color: grey;
-//
-// }
-p{
-  color: lightsalmon;
-  font-weight: bold;
-
+.navbar-expand-lg{
+  justify-content: space-evenly;
 }
 
 footer{
-  color: white;
   text-align: center;
 }
