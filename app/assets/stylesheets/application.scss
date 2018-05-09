@@ -13,7 +13,13 @@
  *= require_tree .
  *= require_self
  */
+a{
+  color: white;
+}
 
+hr{
+  border-width: 2px;
+}
 .navbar-expand-lg{
   justify-content: space-evenly;
 }
@@ -30,5 +36,34 @@ p{
 }
 
 footer{
+  width: 100%;
   text-align: center;
+}
+
+body{
+  padding: 0;
+  background-color: #3AAFA9;
+}
+
+p{
+  color: white;
+}
+
+.jumbotron{
+  background-color:#2B7A78;
+}
+
+.navbar{
+
+  background-color: #2B7A78;
+  font-size: 20px;
+}
+
+.action{
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  height: auto;
 }
