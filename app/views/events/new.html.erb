@@ -1,24 +1,22 @@
-<%= form_for @event do |f| %>
-  <%= f.label :title, "Title: " %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :description, "Description: " %>
-  <%= f.text_field :description %>
-  <br>
-  <%= f.label :location, "Location: " %>
-  <%= f.text_field :location %>
-  <br>
-  <%= f.label :date, "Date: " %>
-  <%= f.text_field :date %>
-  <br>
-  <%= f.label :time, "Time: " %>
-  <%= f.text_field :time %>
-  <br>
-  <%= f.label :avatar %><br />
-  <%= f.file_field :avatar %>
-  <br>
+<div class = "container"
+  <%= form_for @event do |f| %>
+    <p><%= f.label :title, "Title: " %></p>
+    <p><%= f.text_field :title %></p>
 
+    <p><%= f.label :description, "Description: " %></p>
+    <p><%= f.text_field :description %></p>
 
-  <%= f.submit %>
+    <p><%= f.label :location, "Location: " %></p>
+    <p><%= f.text_field :location %></p>
 
-<% end %>
+    <p><%= f.label :date, "Date: " %></p>
+    <p><%= f.text_field :date %></p>
+
+    <p><%= f.label :time, "Time: " %></p>
+    <p><%= f.text_field :time %></p>
+
+    <p><%= f.label :avatar %><br /></p>
+    <p><%= f.file_field :avatar %></p>
+    <%= f.submit %>
+  <% end %>
+</div>  
