@@ -25,13 +25,14 @@ hr{
 }
 
 footer{
-  width: 100%;
   text-align: center;
+  line-height: 1.5;
 }
 
 body{
   padding: 0;
   background-color: #3AAFA9;
+  line-height: .5;
 }
 
 p{
@@ -43,9 +44,9 @@ p{
 }
 
 .navbar{
-
   background-color: #2B7A78;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .action{

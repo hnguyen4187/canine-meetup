@@ -13,13 +13,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtZrarPnzDsfagH-LFcFF2xLQ
 <div id="map">
 </div>
 
- <div class = "container" >
-  <% @events.each do |event| %>
-  <p>Title: <%= link_to event.title, event_path(event) %></p>
-  <p>Description: <%= event.description %></p>
-  <p>Location: <%= event.location %></p>
-  <p>Date: <%= event.date %></p>
-  <p>Time: <%= event.time %></p>
-  <hr>
-  <%end%>
-</div>
+
+   <div class = "container" >
+    <% @events.each do |event| %>
+    <p>Title: <%= link_to event.title, event_path(event) %></p>
+    <p>Description: <%= event.description %></p>
+    <p>Location: <%= event.location %></p>
+    <p>Date: <%= event.date %></p>
+    <p>Time: <%= event.time %></p>
+    <hr>
+    <%end%>
+  </div>
