@@ -1,14 +1,18 @@
 <div class = "container" >
   <% @dogs.each do |dog| %>
-  <p>First name: <%= link_to dog.fname, dog_path(dog) %></p>
-  <p>Last name: <%= dog.lname %></p>
-  <p>Gender: <%=  dog.gender %></p>
-  <p>Age: <%=  dog.age %> years old</p>
-  <p>Breed: <%= dog.breed %></p>
-  <p>Fixed: <%= dog.fix %></p>
-  <p>Belongs to: <%=link_to dog.user.fname, user_path(dog.user)%> <%= link_to dog.user.lname, user_path(dog.user) %></p>
-   <% if dog.avatar.url %>
+  <% if dog.avatar.url %>
   <%= image_tag dog.avatar.url %>
+  <br>
+  <br>
+  <div id = "dog-info">
+    <p>First name: <%= link_to dog.fname, dog_path(dog) %></p>
+    <p>Last name: <%= dog.lname %></p>
+    <p>Gender: <%=  dog.gender %></p>
+    <p>Age: <%=  dog.age %> years old</p>
+    <p>Breed: <%= dog.breed %></p>
+    <p>Fixed: <%= dog.fix %></p>
+    <p>Belongs to: <%=link_to dog.user.fname, user_path(dog.user)%> <%= link_to dog.user.lname, user_path(dog.user) %></p>
+  </div>
   <hr>
   <%end%>
   <%end%>

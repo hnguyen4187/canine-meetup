@@ -33,6 +33,7 @@ body{
   padding: 0;
   background-color: #3AAFA9;
   line-height: .5;
+  position: relative;
 }
 
 p{
@@ -55,9 +56,21 @@ p{
 
 img {
   width: 300px;
-  height: auto;
+  height: 200px;;
 }
 
 #main-body{
   line-height: 1.5;
+}
+
+#dog-info{
+  float: right;
+  margin-top: -175px;
+  margin-right: 500px;
+}
+
+#profile{
+  float: right;
+  margin-top: -280px;
+  margin-right: 400px;
 }
