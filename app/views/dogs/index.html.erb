@@ -1,5 +1,6 @@
 <div class = "container" >
   <% @dogs.each do |dog| %>
+  <div class = "pro" >
   <p>First name: <%= link_to dog.fname, dog_path(dog) %></p>
   <p>Last name: <%= dog.lname %></p>
   <p>Gender: <%=  dog.gender %></p>
@@ -9,6 +10,7 @@
   <p>Belongs to: <%=link_to dog.user.fname, user_path(dog.user)%> <%= link_to dog.user.lname, user_path(dog.user) %></p>
    <% if dog.avatar.url %>
   <%= image_tag dog.avatar.url %>
+</div>
   <hr>
   <%end%>
   <%end%>
