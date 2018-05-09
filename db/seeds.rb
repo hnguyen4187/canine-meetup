@@ -20,15 +20,9 @@ admin_list.each do |email, password|
 end
 
 user_list = [
-<<<<<<< HEAD
   ["bee2@gmail.com", "123456","123456", "Joel", "Embiid", "I play basketball for the 76ers", "joel"],
   ["jay2@gmail.com", "123456", "123456", "Carson", "Wentz", "QB for the Eagles", "carson"],
   ["kobi2@gmail.com", "123456", "123456", "Kevin", "Hart", "I make jokes for a living", "hart"]
-=======
-  ["bee2@gmail.com", "123456","123456", "Joel", "Embiid", "I play basketball for the 76ers. My favorite line is 'Trust The Process'.", "joel"],
-  ["jay2@gmail.com", "123456", "123456", "Carson", "Wentz", "QB for the Eagles. I wear number #11 on the field.", "carson"],
-  ["kobi2@gmail.com", "123456", "123456", "Kevin", "Hart", "I make people laugh for a living. I love my city #Philly4Ever.", "hart"]
->>>>>>> 79f2ae93520ec5d08c9fac806fc205f6177a80ca
 ]
 
 user_list.each do |email, password, password_confirmation, fname, lname, description, avatar|
