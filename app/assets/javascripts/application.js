@@ -17,80 +17,30 @@
 
 
 function initMap() {
+    var cen = {lat: 39.958224, lng: -75.173135}
+		var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: cen
+        });
+				var locations = [
+	    ['Penns Landing Dog Park', 39.949637, -75.139647],
+	    ['Schuylkill River Dog Park', 39.949037, -75.181142],
+	    ['Columbus Square Park', 39.933155, -75.164776]
+	  ];
 
-	// List of the first events
-	var penn = {
-		info: '<strong>Penn Landing Dog Park</strong><br>\
-					 1 N Delaware Ave <br>Philadelphia, PA 19106<br>',
-		lat: 39.949637,
-		long: -75.139647
-	};
-
-	var river = {
-		info: '<strong>Schuylkill River Dog Park</strong><br>\
-					S 25th St & Spruce St <br> Philadelphia, PA 19103<br>',
-		lat: 39.949027,
-		long: -75.181142
-	};
-
-	var square = {
-		info: '<strong>Columbus Square Dog Park</strong><br>\
-					1200 Wharton St<br> Philadelphia, PA 19147<br>',
-		lat: 39.933155,
-		long: -75.164776
-	};
-
-	var locations = [
-      [penn.info, penn.lat, penn.long, 0],
-      [river.info, river.lat, river.long, 1],
-      [square.info, square.lat, square.long, 2],
-    ];
-// renders the map on the page
-	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 11,
-		center: new google.maps.LatLng(39.958224, -75.173135),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	});
-
-	var geocoder = new google.maps.Geocoder();
-
-	document.getElementById('submit').addEventListener('click', function() {
-		geocodeAddress(geocoder, map);
-	});
-
-
-	var infowindow = new google.maps.InfoWindow({});
- // Sets markers on locations
-	var marker, i;
-
-	for (i = 0; i < locations.length; i++) {
-		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-			map: map
-		});
-
-		google.maps.event.addListener(marker, 'click', (function (marker, i) {
-			return function () {
-				infowindow.setContent(locations[i][0]);
-				infowindow.open(map, marker);
-			}
-		})(marker, i));
-	}
-
-
-}
-
-function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value;
-  geocoder.geocode({'address': address}, function(results, status) {
-    if (status === 'OK') {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
+	var infowindow =  new google.maps.InfoWindow({});
+	var marker, count;
+	for (count = 0; count < locations.length; count++) {
+	    marker = new google.maps.Marker({
+	      position: new google.maps.LatLng(locations[count][1], locations[count][2]),
+	      map: map,
+	      title: locations[count][0]
+	    });
+	google.maps.event.addListener(marker, 'click', (function (marker, count) {
+	      return function () {
+	        infowindow.setContent(locations[count][0]);
+	        infowindow.open(map, marker);
+	      }
+	    })(marker, count));
+	  }
 }
