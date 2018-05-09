@@ -6,7 +6,7 @@
   <p>Age: <%=  dog.age %> years old</p>
   <p>Breed: <%= dog.breed %></p>
   <p>Fixed: <%= dog.fix %></p>
-  <p>Belongs to: <%= link_to dog.user.fname %> <%= link_to dog.user.lname %></p>
+  <p>Belongs to: <%=link_to dog.user.fname, user_path(dog.user)%> <%= link_to dog.user.lname, user_path(dog.user) %></p>
    <% if dog.avatar.url %>
   <%= image_tag dog.avatar.url %>
   <hr>
