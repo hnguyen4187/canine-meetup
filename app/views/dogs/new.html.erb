@@ -1,26 +1,26 @@
 <div class = "container" >
   <%= form_for @dog do |f| %>
-    <%= f.label :fname, "First name: " %>
-    <%= f.text_field :fname %>
-    <br>
-    <%= f.label :lname, "Last name: " %>
-    <%= f.text_field :lname %>
-    <br>
-    <%= f.label :gender, "Gender: " %>
-    <%= f.select :gender, dog_gender %>
-    <br>
-    <%= f.label :age, "Age: " %>
-    <%= f.text_field :age %>
-    <br>
-    <%= f.label :breed, "Breed: " %>
-    <%= f.text_field :breed %>
-    <br>
-    <%= f.label :fix, "Fixed: " %>
-    <%= f.select :fix, dog_fix %>
-    <br>
-    <%= f.label :avatar %><br />
-    <%= f.file_field :avatar %>
-    <br>
-    <%= f.submit %>
+    <p><%= f.label :fname, "First name: " %></p>
+    <p><%= f.text_field :fname %></p>
+
+    <p><%= f.label :lname, "Last name: " %></p>
+    <p><%= f.text_field :lname %></p>
+
+    <p><%= f.label :gender, "Gender: " %></p>
+    <p><%= f.select :gender, dog_gender %></p>
+
+    <p><%= f.label :age, "Age: " %></p>
+    <p><%= f.text_field :age %></p>
+
+    <p><%= f.label :breed, "Breed: " %></p>
+    <p><%= f.text_field :breed %></p>
+
+    <p><%= f.label :fix, "Fixed: " %></p>
+    <p><%= f.select :fix, dog_fix %></p>
+
+    <p><%= f.label :avatar %><br /></p>
+    <p><%= f.file_field :avatar %></p>
+
+    <p><%= f.submit %></p>
   <% end %>
 </div>

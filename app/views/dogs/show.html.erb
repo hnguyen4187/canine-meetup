@@ -1,4 +1,8 @@
 <div class = "container" >
+  <% if @dog.avatar.url %>
+  <%= image_tag @dog.avatar.url %>
+  <br>
+  <br>
   <p>Your Dog: </p>
   <p>First name: <%= link_to @dog.fname %></p>
   <p>Last name: <%= link_to @dog.lname %></p>
@@ -6,8 +10,7 @@
   <p>Age: <%= link_to @dog.age %> years old</p>
   <p>Breed: <%= link_to @dog.breed %></p>
   <p>Fixed: <%= link_to @dog.fix %></p>
-   <% if @dog.avatar.url %>
-  <%= image_tag @dog.avatar.url %>
+
 
   <% if current_user.id == @dog.user_id %>
   <%= form_with scope: DogEvent.new, url: dog_events_path, method: :post do |f| %>
@@ -15,9 +18,12 @@
   <%= hidden_field_tag 'dog_event[dog_id]', @dog.id %>
   <%= f.submit "Add dog to Event" %>
   <% end %>
+  <br>
   <% if current_user.id == @dog.user_id %>
   <%= link_to "Edit Dog Profile", edit_dog_path(@dog) %>
   <% end %>
+  <br>
+  <br>
   <br>
   <%= link_to "Delete Dog", dog_path(@dog), method: :delete %>
   <% end %>
