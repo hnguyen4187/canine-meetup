@@ -25,13 +25,15 @@ hr{
 }
 
 footer{
-  width: 100%;
   text-align: center;
+  line-height: 1.5;
 }
 
 body{
   padding: 0;
   background-color: #3AAFA9;
+  line-height: .5;
+  position: relative;
 }
 
 p{
@@ -43,9 +45,9 @@ p{
 }
 
 .navbar{
-
   background-color: #2B7A78;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .action{
@@ -54,7 +56,23 @@ p{
 
 img {
   width: 300px;
-  height: auto;
+  height: 200px;;
+}
+
+#main-body{
+  line-height: 1.5;
+}
+
+#dog-info{
+  float: right;
+  margin-top: -175px;
+  margin-right: 500px;
+}
+
+#profile{
+  float: right;
+  margin-top: -280px;
+  margin-right: 400px;
 }
 
 strong{
