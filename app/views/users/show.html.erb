@@ -1,15 +1,17 @@
 
 <div class = "container">
   <div id = "container-2">
-    <p>Your Profile: </p>
-     <% if @user.avatar.url %>
-    <%= image_tag @user.avatar.url %>
-    <%end%>
-    <br>
-    <br>
-    <p>First name: <%= @user.fname %></p>
-    <p>Last name: <%= @user.lname %></p>
-    <p>Description: <%= @user.description %></p>
+    <div class="pro">
+      <p>Your Profile: </p>
+       <% if @user.avatar.url %>
+      <%= image_tag @user.avatar.url %>
+      <%end%>
+      <br>
+      <br>
+      <p>First name: <%= @user.fname %></p>
+      <p>Last name: <%= @user.lname %></p>
+      <p>Description: <%= @user.description %></p>
+    </div>
   </div>
 
     <br>
@@ -23,22 +25,22 @@
       <%= link_to 'Delete Profile', user_path(@user), :method => :delete, data: {confirm: "this is your last chance to change your mind!"} %>
       <%end%>
     </div>
-    <hr>
 
-    <% @user_dogs.each do |dog| %>
-    <% if dog.avatar.url %>
-    <%= image_tag dog.avatar.url %>
-    <br>
-    <br>
-    <div id = "dog-info">
-      <p>First name: <%= dog.fname %></p>
-      <p>Last name: <%= dog.lname %></p>
-      <p>Gender: <%= dog.gender %></p>
-      <p>Age: <%= link_to dog.age %> years old</p>
-      <p>Breed: <%= link_to dog.breed %></p>
-      <p>Fixed: <%= link_to dog.fix %></p>
+   <div class="pro">
+      <% @user_dogs.each do |dog| %>
+        <% if dog.avatar.url %>
+        <%= image_tag dog.avatar.url %>
+        <br>
+        <br>
+      <div id = "dog-info">
+          <p>First name: <%= dog.fname %></p>
+          <p>Last name: <%= dog.lname %></p>
+          <p>Gender: <%= dog.gender %></p>
+          <p>Age: <%= link_to dog.age %> years old</p>
+          <p>Breed: <%= link_to dog.breed %></p>
+          <p>Fixed: <%= link_to dog.fix %></p>
+      </div>
     </div>
-    <hr>
     <br>
     <br>
     <%end%>

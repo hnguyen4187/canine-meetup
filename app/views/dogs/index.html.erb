@@ -1,5 +1,6 @@
 <div class = "container" >
   <% @dogs.each do |dog| %>
+  <div class="pro">
   <% if dog.avatar.url %>
   <%= image_tag dog.avatar.url %>
   <br>
@@ -13,7 +14,7 @@
     <p>Fixed: <%= dog.fix %></p>
     <p>Belongs to: <%=link_to dog.user.fname, user_path(dog.user)%> <%= link_to dog.user.lname, user_path(dog.user) %></p>
   </div>
-  <hr>
+</div>
   <%end%>
   <%end%>
 </div>
