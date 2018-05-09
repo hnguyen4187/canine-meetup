@@ -20,7 +20,7 @@ admin_list.each do |email, password|
 end
 
 user_list = [
-  ["bee2@gmail.com", "123456","123456", "Joel", "Embiid", "I play basketball for the 76ers. My favorite line is 'Trust The Process'. Still waiting for Rihanna to call me back.", "joel"],
+  ["bee2@gmail.com", "123456","123456", "Joel", "Embiid", "I play basketball for the 76ers. My favorite line is 'Trust The Process'.", "joel"],
   ["jay2@gmail.com", "123456", "123456", "Carson", "Wentz", "QB for the Eagles. I wear number #11 on the field.", "carson"],
   ["kobi2@gmail.com", "123456", "123456", "Kevin", "Hart", "I make people laugh for a living. I love my city #Philly4Ever.", "hart"]
 ]
