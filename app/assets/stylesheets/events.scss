@@ -8,8 +8,15 @@
   background-color: grey;
 }
 
+strong{
+  text-align: center;
+}
+
 #floating-panel {
-        position: absolute;
+        position: flex;
+
+        margin-left: 40%;
+        margin-right: 40%;
         top: 10px;
         left: 25%;
         z-index: 5;
