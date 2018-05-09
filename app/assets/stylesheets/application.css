@@ -59,6 +59,7 @@ p{
   background-color: #2B7A78;
   font-size: 20px;
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 .action{
@@ -72,6 +73,7 @@ img {
 
 #main-body{
   line-height: 1.5;
+  padding-top: 40px;
 }
 
 #dog-info{
@@ -88,4 +90,13 @@ img {
 
 strong{
   text-align: center;
+}
+
+.pro-2{
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 10px;
+  resize: horizontal;
+  overflow: auto;
+  margin-bottom: 10px;
 }
