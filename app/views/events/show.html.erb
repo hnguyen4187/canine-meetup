@@ -2,18 +2,18 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtZrarPnzDsfagH-LFcFF2xLQ8FgdHrQ8&callback=initMap">
 </script>
 
-<div class = "container" >
-  <p>Your Event: </p>
+<div class ="container pro">
+  <p>Event: </p>
   <p>Title: <%=  @event.title %></p>
   <p>Description: <%=  @event.description %></p>
   <p>Location: <%=  @event.location %></p>
   <p>Date: <%=  @event.date %></p>
   <p>Time: <%=  @event.time %></p>
-</div>  
 
-<div class="RSVP">
-Dogs RSVP:
-<% @event.dogs.each do |dog| %>
+  <div class="RSVP">
+  <p>Dogs RSVP: </p>
+  <% @event.dogs.each do |dog| %>
   <%= link_to "#{dog.fname} #{dog.lname}", dog_path(dog) %>
-<% end %>
+  <% end %>
+  </div>
 </div>
