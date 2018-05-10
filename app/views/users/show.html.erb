@@ -33,12 +33,12 @@
         <br>
         <br>
       <div id = "dog-info">
-          <p>First name: <%= dog.fname %></p>
+          <p>First name: <%=link_to dog.fname, dog_path(dog) %></p>
           <p>Last name: <%= dog.lname %></p>
           <p>Gender: <%= dog.gender %></p>
-          <p>Age: <%= link_to dog.age %> years old</p>
-          <p>Breed: <%= link_to dog.breed %></p>
-          <p>Fixed: <%= link_to dog.fix %></p>
+          <p>Age: <%= dog.age %> years old</p>
+          <p>Breed: <%= dog.breed %></p>
+          <p>Fixed: <%= dog.fix %></p>
       </div>
     </div>
     <br>
